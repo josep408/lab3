@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body class = "text-center">
         
@@ -56,9 +56,9 @@
         
         <h2 id = "total"></h2>
         <h2 id = "congratulations"></h2>
-        <button id="submitButton"> Submit </button>
+        <button class="btn btn-dark">Submit</button>
         <h2 id="validSubmission"></h2>
-        <h2 id = "totalTimes"></h2>
+        <h2 id = "totalAttempts"></h2>
         <h3 id="prevScores"></h3>
         
         <footer>
@@ -84,7 +84,7 @@
         let q3_answer = "Rhode Island";
         let q5_answer = "seal2";
         let q5_response = "";
-        let totalTimes = localStorage.getItem("totalTimesTaken");
+        let totalAttempts = localStorage.getItem("totalAttemptsTaken");
         let scoresArray =  localStorage.getItem("scoreHistory");
         if (scoresArray == null) {
             scoresArray = [];
@@ -191,11 +191,11 @@
             //Totals    
             $("#total").html("The total Score is: " + total_points);
             if (total_points == 100) {
-                $("#congratulations").html("Congrats on a perfect score!")
+                $("#congratulations").html("Congrats you got a perfect score!")
             }
-            totalTimes++;
-            localStorage.setItem("totalTimesTaken",totalTimes);
-            $("#totalTimes").html("Quiz taken: " + totalTimes + " time(s)");
+            totalAttempts++;
+            localStorage.setItem("totalAttemptsTaken",totalAttempts);
+            $("#totalAttempts").html("Quiz taken: " + totalAttempts + " time(s)");
             scoresArray.push(total_points);
             $("#prevScores").html("Score History: ");
             scoresArray.forEach(function(score){
