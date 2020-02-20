@@ -54,6 +54,22 @@
         <img src="img/seal3.png" alt="Seal 3" class="active" id="seal3">
         <div id = "q5_feedback"></div>
         
+        <h2><span id ="markImg6"></span>What number State is New York?</h2>
+            <label for="quantity">Number of state:</label>
+          <input type="number" id="quantity" name="quantity" min="1" max="5">
+          <div id = "q6_feedback"></div>
+        
+        
+        <h2><span id="markImg7"></span>What is the month of US Independence?</h2>
+         <label for="bdaymonth">Independence (month and year</label>
+          <input type="month" id="indmonth" name="indmonth">
+         <div id = "q7_feedback"></div>
+       
+       <h2><span id="markImg8"> The Colors of the US Flag are: Red, White and ...?</span></h2>
+       <input type="color" id="favcolor" name="favcolor" value="blue"><label for="favcolor">Answer: </label>
+        <div id = "q8_feedback"></div>
+       
+       
         <h2 id = "total"></h2>
         <h2 id = "congratulations"></h2>
         <button class="btn btn-dark">Submit</button>
@@ -74,16 +90,22 @@
     </body>
     
     <script>
-        let q1_value = 20;
-        let q2_value = 20;
-        let q3_value = 20;
-        let q4_value = 20;
-        let q5_value = 20;
+        let q1_value = 12.5;
+        let q2_value = 12.5;
+        let q3_value = 12.5;
+        let q4_value = 12.5;
+        let q5_value = 12.5;
+        let q6_value = 12.5;
+        let q7_value = 12.5;
+        let q8_value = 12.5;
         let q1_answer = "sacramento";
         let q2_answer = "Missouri";
         let q3_answer = "Rhode Island";
-        let q5_answer = "seal2";
+        let q4_answer = "seal2";
         let q5_response = "";
+        let q6_answer = 11;
+        let q7_answer = " july 1776"
+        let q8_answer = "blue"
         let totalAttempts = localStorage.getItem("totalAttemptsTaken");
         let scoresArray =  localStorage.getItem("scoreHistory");
         if (scoresArray == null) {
@@ -185,6 +207,43 @@
                 $("#q5_feedback").attr("class", "incorrect");
             }
             
+             //Question 6
+            if (q6_answer== q6_answer) {
+                $("#q6_feedback").html("Correct!");
+                total_points += q6_value;
+                $("#markImg6").html("<img src ='img/checkmark.png' alt='checkmark'>");
+                $("#q6_feedback").attr("class", "correct");
+            }
+            else {
+                $("#q6_feedback").html("Incorrect!");
+                $("#markImg6").html("<img src ='img/xmark.png' alt='xmark'>");
+                $("#q6_feedback").attr("class", "incorrect");
+            }
+            
+             //Question 7
+            if (q7_answer== q7_answer) {
+                $("#q7_feedback").html("Correct!");
+                total_points += q7_value;
+                $("#markImg7").html("<img src ='img/checkmark.png' alt='checkmark'>");
+                $("#q7_feedback").attr("class", "correct");
+            }
+            else {
+                $("#q7_feedback").html("Incorrect!");
+                $("#markImg6").html("<img src ='img/xmark.png' alt='xmark'>");
+                $("#q7_feedback").attr("class", "incorrect");
+            }
+             //Question 8
+            if (q8_answer== q8_answer) {
+                $("#q6_feedback").html("Correct!");
+                total_points += q8_value;
+                $("#markImg8").html("<img src ='img/checkmark.png' alt='checkmark'>");
+                $("#q8_feedback").attr("class", "correct");
+            }
+            else {
+                $("#q8_feedback").html("Incorrect!");
+                $("#markImg8").html("<img src ='img/xmark.png' alt='xmark'>");
+                $("#q8_feedback").attr("class", "incorrect");
+            }
             //Congrats if 100 points
             
                 
@@ -192,6 +251,16 @@
             $("#total").html("The total Score is: " + total_points);
             if (total_points == 100) {
                 $("#congratulations").html("Congrats you got a perfect score!")
+            }
+            // congrats for avobe 80 points 
+            if (total_points >=80){
+                $("#congratulations").html("You got a score avobe 80")
+                
+            }
+            
+            // red message for below standards
+            if(total_points <= 79){
+                $("#congratulations").html("you had a score that was unsatisfactory", 'color red')
             }
             totalAttempts++;
             localStorage.setItem("totalAttemptsTaken",totalAttempts);
@@ -201,6 +270,7 @@
             scoresArray.forEach(function(score){
                 $("#prevScores").append(score + " ");
             });
+            
             
             localStorage.setItem("scoreHistory",scoresArray);
             
