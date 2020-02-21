@@ -4,11 +4,14 @@
         <meta charset="utf-8">
         <title> US Quiz </title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script> 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" href="css/styles.css">
     <script>
-        $(document).ready(function(){
+    $(document).ready(function(){
+        var score = 0;
+        var 
          let q1_value = 12.5;
         let q2_value = 12.5;
         let q3_value = 12.5;
@@ -194,8 +197,9 @@
             localStorage.setItem("scoreHistory",scoresArray);
             
         });
-    </script>
+   </script>
     </head>
+    
     <body class = "text-center">
         
         <h1 class="jumbotron">US Geography Quiz</h1>
@@ -270,10 +274,6 @@
             CST 336. 2019&copy; Lester-Wilson<br>
             <strong>Disclaimer:</strong> The information in this website is fictitious.<br>
             It is used for academic purposes only.<br>
-            <br>
-            <img src="../../img/csumb_logo.png" alt="CSUMB Logo">
-            <br>
-            <img src="../../img/buddy_verified.png" alt="Buddy Verified">
         </footer>
     </body>
    
