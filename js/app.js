@@ -1,9 +1,5 @@
 function gradequiz(){
-    
-   
-           
-            }
-            
+
  $(document).ready(function(){
         var score = 0;
         var attempts = 0;
@@ -45,7 +41,6 @@ function gradequiz(){
                 $("#validSubmission").html("Question 1 not answered");
             }
             return isValid;
-  
         
         $("#submitButton").on( "click", function() {
             
@@ -183,8 +178,13 @@ function gradequiz(){
             totalAttempts++;
             localStorage.setItem("totalAttemptsTaken",totalAttempts);
             $("#totalAttempts").html("Quiz taken: " + totalAttempts + " time(s)");
-            scoresArray.push(total_points);
             $("#prevScores").html("Score History: ");
             scoresArray.forEach(function(score){
                 $("#prevScores").append(score + " ");
-            
+                });
+                  scoresArray.push(total_points)
+        });
+        }
+ })
+ 
+}
